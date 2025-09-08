@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJH#23 - Slippi Analysis</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Slippi Technique Analysis</h1>
+            <div class="summary">
+            <p>📁 Games Analyzed: <span>733</span></p>
+        </div>
+        </header>
+
+        
+
+
+        <section class="view-navigation">
+            <div class="view-toggle">
+                <button id="movement-view-btn" class="view-btn active" onclick="switchView('movement')">
+                    🏃 Movement Analysis
+                </button>
+                <button id="attacks-view-btn" class="view-btn" onclick="switchView('attacks')">
+                    ⚔️ Attacks Analysis
+                </button>
+            </div>
+        </section>
+
+
+        <main id="movement-container" class="players-comparison">
+            
+        <section class="player-section">
+            <h2>KJH#23</h2>
+            
+            <div class="technique-categories">
+                <div class="category collapsible">
+                    <h3 class="category-header">
+                        <div class="category-header-text">
+                            Basic Techniques
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" onclick="switchBasicMode('total')">Total</div>
+                            <div class="toggle-button" onclick="switchBasicMode('per-game')">Per Game</div>
+                        </div>
+                    </h3>
+                    <div class="category-content">
+                        <div class="technique-grid" id="basic-total">
+                            <div class="technique-item">Wavedash: <span>13034</span></div>
+                            <div class="technique-item">Waveland: <span>10548</span></div>
+                            <div class="technique-item">L-Cancel: <span>14229</span></div>
+                            <div class="technique-item">Dash Dance: <span>17608</span></div>
+                            <div class="technique-item">Ledge Grab: <span>4902</span></div>
+                            <div class="technique-item">Roll: <span>2698</span></div>
+                            <!-- <div class="technique-item">Air Dodge: <span>-3436</span></div> -->
+                            <div class="technique-item">Spot Dodge: <span>1228</span></div>
+                        </div>
+                        <div class="technique-grid" id="basic-per-game" style="display: none;">
+                            <div class="technique-item">Wavedash: <span>17.8</span></div>
+                            <div class="technique-item">Waveland: <span>14.4</span></div>
+                            <div class="technique-item">L-Cancel: <span>19.4</span></div>
+                            <div class="technique-item">Dash Dance: <span>24.0</span></div>
+                            <div class="technique-item">Ledge Grab: <span>6.7</span></div>
+                            <div class="technique-item">Roll: <span>3.7</span></div>
+                            <!-- <div class="technique-item">Air Dodge: <span>-4.7</span></div> -->
+                            <div class="technique-item">Spot Dodge: <span>1.7</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category collapsible">
+                    <h3 class="category-header">
+                        <div class="category-header-text">
+                            Platform Movement
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" onclick="switchPlatformMode('total')">Total</div>
+                            <div class="toggle-button" onclick="switchPlatformMode('per-game')">Per Game</div>
+                        </div>
+                    </h3>
+                    <div class="category-content">
+                        <div class="platform-grid" id="platform-total">
+                            <div class="platform-tab shield-drop active" data-platform="shieldDrop">Shield Drop: <span>4940</span></div>
+                            <div class="platform-tab platform-drop" data-platform="platformDrop">Platform Drop: <span>1722</span></div>
+                            <div class="platform-tab run-off" data-platform="runOff">Run Off: <span>5335</span></div>
+                            <div class="platform-tab waveland-off" data-platform="wavelandOff">Waveland Off: <span>1645</span></div>
+                        </div>
+                        <div class="platform-grid" id="platform-per-game" style="display: none;">
+                            <div class="platform-tab shield-drop active" data-platform="shieldDrop">Shield Drop: <span>6.7</span></div>
+                            <div class="platform-tab platform-drop" data-platform="platformDrop">Platform Drop: <span>2.3</span></div>
+                            <div class="platform-tab run-off" data-platform="runOff">Run Off: <span>7.3</span></div>
+                            <div class="platform-tab waveland-off" data-platform="wavelandOff">Waveland Off: <span>2.2</span></div>
+                        </div>
+                        
+                        <div class="technique-item" style="margin-top: 15px;" id="no-impact-total">No-Impact Landing: <span>142</span></div>
+                        <div class="technique-item" style="margin-top: 15px; display: none;" id="no-impact-per-game">No-Impact Landing: <span>0.2</span></div>
+                        
+                        <div class="platform-details">
+                            
+            <div class="platform-sequence-panel active" data-platform="shieldDrop" >
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchPlatformResolutionMode('shieldDrop', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchPlatformResolutionMode('shieldDrop', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Aerial Attacks - <span class="section-total" data-total="1222" data-percentage="24.7%">1222</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Neutral Air: <span data-total="92" data-percentage="1.9%">92</span></div>
+                                <div class="technique-item">Forward Air: <span data-total="16" data-percentage="0.3%">16</span></div>
+                                <div class="technique-item">Back Air: <span data-total="553" data-percentage="11.2%">553</span></div>
+                                <div class="technique-item">Up Air: <span data-total="2" data-percentage="0.0%">2</span></div>
+                                <div class="technique-item">Down Air: <span data-total="559" data-percentage="11.3%">559</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Character Specials - <span class="section-total" data-total="1903" data-percentage="38.5%">1903</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Phantasm: <span data-total="19" data-percentage="0.4%">19</span></div>
+                                <div class="technique-item">Shine: <span data-total="449" data-percentage="9.1%">449</span></div>
+                                <div class="technique-item">Laser: <span data-total="1435" data-percentage="29.1%">1435</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sequence-category full-width">
+                        <h5>Other Sequences - <span class="section-total" data-total="1813" data-percentage="36.7%">1813</span></h5>
+                        <div class="technique-grid-two-column">
+                            <div class="technique-column">
+                                <div class="technique-item">Land: <span data-total="952" data-percentage="19.3%">952</span></div>
+                                <div class="technique-item">Jump: <span data-total="539" data-percentage="10.9%">539</span></div>
+                                <div class="technique-item">Hit: <span data-total="204" data-percentage="4.1%">204</span></div>
+                            </div>
+                            <div class="technique-column">
+                                <div class="technique-item">Grab Edge: <span data-total="14" data-percentage="0.3%">14</span></div>
+                                <div class="technique-item">Wave Land: <span data-total="92" data-percentage="1.9%">92</span></div>
+                                <div class="technique-item">Air Dodge: <span data-total="12" data-percentage="0.2%">12</span></div>
+                            </div>
+                            <div class="technique-item full-width-item zero-value">Other: <span data-total="0" data-percentage="0.0%">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                            
+            <div class="platform-sequence-panel " data-platform="platformDrop" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchPlatformResolutionMode('platformDrop', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchPlatformResolutionMode('platformDrop', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Aerial Attacks - <span class="section-total" data-total="568" data-percentage="33.0%">568</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Neutral Air: <span data-total="27" data-percentage="1.6%">27</span></div>
+                                <div class="technique-item">Forward Air: <span data-total="2" data-percentage="0.1%">2</span></div>
+                                <div class="technique-item">Back Air: <span data-total="390" data-percentage="22.6%">390</span></div>
+                                <div class="technique-item">Up Air: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Down Air: <span data-total="148" data-percentage="8.6%">148</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Character Specials - <span class="section-total" data-total="738" data-percentage="42.9%">738</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Phantasm: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Shine: <span data-total="88" data-percentage="5.1%">88</span></div>
+                                <div class="technique-item">Laser: <span data-total="649" data-percentage="37.7%">649</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sequence-category full-width">
+                        <h5>Other Sequences - <span class="section-total" data-total="416" data-percentage="24.2%">416</span></h5>
+                        <div class="technique-grid-two-column">
+                            <div class="technique-column">
+                                <div class="technique-item">Land: <span data-total="198" data-percentage="11.5%">198</span></div>
+                                <div class="technique-item">Jump: <span data-total="122" data-percentage="7.1%">122</span></div>
+                                <div class="technique-item">Hit: <span data-total="59" data-percentage="3.4%">59</span></div>
+                            </div>
+                            <div class="technique-column">
+                                <div class="technique-item">Grab Edge: <span data-total="27" data-percentage="1.6%">27</span></div>
+                                <div class="technique-item">Wave Land: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Air Dodge: <span data-total="7" data-percentage="0.4%">7</span></div>
+                            </div>
+                            <div class="technique-item full-width-item">Other: <span data-total="2" data-percentage="0.1%">2</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                            
+            <div class="platform-sequence-panel " data-platform="runOff" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchPlatformResolutionMode('runOff', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchPlatformResolutionMode('runOff', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Aerial Attacks - <span class="section-total" data-total="446" data-percentage="8.4%">446</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Neutral Air: <span data-total="78" data-percentage="1.5%">78</span></div>
+                                <div class="technique-item">Forward Air: <span data-total="7" data-percentage="0.1%">7</span></div>
+                                <div class="technique-item">Back Air: <span data-total="192" data-percentage="3.6%">192</span></div>
+                                <div class="technique-item">Up Air: <span data-total="5" data-percentage="0.1%">5</span></div>
+                                <div class="technique-item">Down Air: <span data-total="164" data-percentage="3.1%">164</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Character Specials - <span class="section-total" data-total="2306" data-percentage="43.2%">2306</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Phantasm: <span data-total="228" data-percentage="4.3%">228</span></div>
+                                <div class="technique-item">Shine: <span data-total="905" data-percentage="17.0%">905</span></div>
+                                <div class="technique-item">Laser: <span data-total="1173" data-percentage="22.0%">1173</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sequence-category full-width">
+                        <h5>Other Sequences - <span class="section-total" data-total="2583" data-percentage="48.4%">2583</span></h5>
+                        <div class="technique-grid-two-column">
+                            <div class="technique-column">
+                                <div class="technique-item">Land: <span data-total="911" data-percentage="17.1%">911</span></div>
+                                <div class="technique-item">Jump: <span data-total="1380" data-percentage="25.9%">1380</span></div>
+                                <div class="technique-item">Hit: <span data-total="105" data-percentage="2.0%">105</span></div>
+                            </div>
+                            <div class="technique-column">
+                                <div class="technique-item">Grab Edge: <span data-total="148" data-percentage="2.8%">148</span></div>
+                                <div class="technique-item">Wave Land: <span data-total="9" data-percentage="0.2%">9</span></div>
+                                <div class="technique-item">Air Dodge: <span data-total="21" data-percentage="0.4%">21</span></div>
+                            </div>
+                            <div class="technique-item full-width-item">Other: <span data-total="9" data-percentage="0.2%">9</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                            
+            <div class="platform-sequence-panel " data-platform="wavelandOff" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchPlatformResolutionMode('wavelandOff', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchPlatformResolutionMode('wavelandOff', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Aerial Attacks - <span class="section-total" data-total="103" data-percentage="6.3%">103</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Neutral Air: <span data-total="2" data-percentage="0.1%">2</span></div>
+                                <div class="technique-item">Forward Air: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Back Air: <span data-total="93" data-percentage="5.7%">93</span></div>
+                                <div class="technique-item">Up Air: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Down Air: <span data-total="6" data-percentage="0.4%">6</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Character Specials - <span class="section-total" data-total="572" data-percentage="34.8%">572</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Phantasm: <span data-total="28" data-percentage="1.7%">28</span></div>
+                                <div class="technique-item">Shine: <span data-total="154" data-percentage="9.4%">154</span></div>
+                                <div class="technique-item">Laser: <span data-total="390" data-percentage="23.7%">390</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sequence-category full-width">
+                        <h5>Other Sequences - <span class="section-total" data-total="970" data-percentage="59.0%">970</span></h5>
+                        <div class="technique-grid-two-column">
+                            <div class="technique-column">
+                                <div class="technique-item">Land: <span data-total="223" data-percentage="13.6%">223</span></div>
+                                <div class="technique-item">Jump: <span data-total="299" data-percentage="18.2%">299</span></div>
+                                <div class="technique-item">Hit: <span data-total="30" data-percentage="1.8%">30</span></div>
+                            </div>
+                            <div class="technique-column">
+                                <div class="technique-item">Grab Edge: <span data-total="417" data-percentage="25.3%">417</span></div>
+                                <div class="technique-item zero-value">Wave Land: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item zero-value">Air Dodge: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                            <div class="technique-item full-width-item">Other: <span data-total="1" data-percentage="0.1%">1</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category collapsible">
+                    <h3 class="category-header">
+                        <div class="category-header-text">
+                            Shine Movement
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" onclick="switchShineMode('total')">Total</div>
+                            <div class="toggle-button" onclick="switchShineMode('per-game')">Per Game</div>
+                            <div class="toggle-button" onclick="switchShineMode('percentage')">%</div>
+                        </div>
+                    </h3>
+                    <div class="category-content">
+                        <div class="shine-movements" id="shine-total">
+                            <div class="shine-section">
+                                <h4>Shine Wavedash - 4547</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>4346</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>112</span></div>
+                                    <div class="technique-item regular-turn">Regular Turn: <span>89</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Waveland - 3652</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Regular: <span>2822</span></div>
+                                    <div class="technique-item">Turn: <span>830</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Grab - 2</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>1</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>1</span></div>
+                                    <div class="technique-item regular-turn zero-value">Regular Turn: <span>0</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="technique-item">Shine Turnaround Firefox Ledge Grab: <span>369</span></div>
+                        </div>
+                        
+                        <div class="shine-movements" id="shine-per-game" style="display: none;">
+                            <div class="shine-section">
+                                <h4>Shine Wavedash - 6.2</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>5.9</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>0.2</span></div>
+                                    <div class="technique-item regular-turn">Regular Turn: <span>0.1</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0.0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Waveland - 5.0</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Regular: <span>3.8</span></div>
+                                    <div class="technique-item">Turn: <span>1.1</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Grab - 0.0</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>0.0</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>0.0</span></div>
+                                    <div class="technique-item regular-turn zero-value">Regular Turn: <span>0.0</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0.0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="technique-item">Shine Turnaround Firefox Ledge Grab: <span>0.5</span></div>
+                        </div>
+                        
+                        <div class="shine-movements" id="shine-percentage" style="display: none;">
+                            <div class="shine-section">
+                                <h4>Shine Wavedash - 53.1%</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>50.7%</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>1.3%</span></div>
+                                    <div class="technique-item regular-turn">Regular Turn: <span>1.0%</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0.0%</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Waveland - 42.6%</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Regular: <span>32.9%</span></div>
+                                    <div class="technique-item">Turn: <span>9.7%</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="shine-section">
+                                <h4>Shine Grab - 0.0%</h4>
+                                <div class="shine-technique-grid">
+                                    <div class="technique-item regular">Regular: <span>0.0%</span></div>
+                                    <div class="technique-item frame-perfect">Frame Perfect: <span>0.0%</span></div>
+                                    <div class="technique-item regular-turn zero-value">Regular Turn: <span>0.0%</span></div>
+                                    <div class="technique-item frame-perfect-turn zero-value">Frame Perfect Turn: <span>0.0%</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="technique-item">Shine Turnaround Firefox Ledge Grab: <span>4.3%</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category collapsible">
+                    <h3 class="category-header">
+                        <div class="category-header-text">
+                            Cancel Techniques
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" onclick="switchCancelMode('total')">Total</div>
+                            <div class="toggle-button" onclick="switchCancelMode('per-game')">Per Game</div>
+                            <div class="toggle-button" onclick="switchCancelMode('percentage')">%</div>
+                        </div>
+                    </h3>
+                    <div class="category-content">
+                        <div class="cancel-techniques" id="cancel-total">
+                            <div class="cancel-section">
+                                <h4>Edge Cancels - 121</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>2</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>31</span></div>
+                                    <div class="technique-item nair">N Air: <span>9</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>4</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>75</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Teeter Cancels - 118</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>7</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>18</span></div>
+                                    <div class="technique-item nair">N Air: <span>49</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>17</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>27</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Auto-Cancels - 3965</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>84</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>3163</span></div>
+                                    <div class="technique-item nair">N Air: <span>116</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>14</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>588</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Platform Cancels - 9</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair zero-value">Up Air: <span>0</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>9</span></div>
+                                    <div class="technique-item nair zero-value">N Air: <span>0</span></div>
+                                    <div class="technique-item fair zero-value">Forward Air: <span>0</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair zero-value">Down Air: <span>0</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cancel-techniques" id="cancel-per-game" style="display: none;">
+                            <div class="cancel-section">
+                                <h4>Edge Cancels - 0.2</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.0</span></div>
+                                    <div class="technique-item nair">N Air: <span>0.0</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>0.1</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Teeter Cancels - 0.2</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.0</span></div>
+                                    <div class="technique-item nair">N Air: <span>0.1</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>0.0</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Auto-Cancels - 5.4</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>0.1</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>4.3</span></div>
+                                    <div class="technique-item nair">N Air: <span>0.2</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>0.8</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Platform Cancels - 0.0</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair zero-value">Up Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.0</span></div>
+                                    <div class="technique-item nair zero-value">N Air: <span>0.0</span></div>
+                                    <div class="technique-item fair zero-value">Forward Air: <span>0.0</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair zero-value">Down Air: <span>0.0</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cancel-techniques" id="cancel-percentage" style="display: none;">
+                            <div class="cancel-section">
+                                <h4>Edge Cancels - 2.9%</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>0.0%</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.7%</span></div>
+                                    <div class="technique-item nair">N Air: <span>0.2%</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.1%</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>1.8%</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Teeter Cancels - 2.8%</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>0.2%</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.4%</span></div>
+                                    <div class="technique-item nair">N Air: <span>1.2%</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.4%</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>0.6%</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Auto-Cancels - 94.1%</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair">Up Air: <span>2.0%</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>75.1%</span></div>
+                                    <div class="technique-item nair">N Air: <span>2.8%</span></div>
+                                    <div class="technique-item fair">Forward Air: <span>0.3%</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair">Down Air: <span>14.0%</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <div class="cancel-section">
+                                <h4>Platform Cancels - 0.2%</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="technique-item uair zero-value">Up Air: <span>0.0%</span></div>
+                                    <div></div>
+                                    <div class="technique-item bair">Back Air: <span>0.2%</span></div>
+                                    <div class="technique-item nair zero-value">N Air: <span>0.0%</span></div>
+                                    <div class="technique-item fair zero-value">Forward Air: <span>0.0%</span></div>
+                                    <div></div>
+                                    <div class="technique-item dair zero-value">Down Air: <span>0.0%</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        </main>
+
+        <main id="attacks-container" class="players-comparison" style="display: none;">
+            
+        <section class="player-section">
+            <h2>KJH#23</h2>
+            
+            <div class="technique-categories">
+                <div class="category collapsible">
+                    <div class="category-header">
+                        <div class="category-header-text">
+                            <h3>Attack Statistics</h3>
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" data-player="1" data-category="attack" data-mode="breakdown" onclick="switchAttackMode('breakdown')">Breakdown</div>
+                            <div class="toggle-button" data-player="1" data-category="attack" data-mode="per-game-breakdown" onclick="switchAttackMode('per-game-breakdown')">Per Game Breakdown</div>
+                            <div class="toggle-button" data-player="1" data-category="attack" data-mode="per-game-total" onclick="switchAttackMode('per-game-total')">Per Game Total</div>
+                            <div class="toggle-button" data-player="1" data-category="attack" data-mode="total" onclick="switchAttackMode('total')">Total</div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <!-- Breakdown View (Default) -->
+                        <div id="attack-breakdown" style="display: block;">
+                            <div class="attack-section">
+                                <p class=view-description><span style="color: #68d391">Hit</span> | <span style="color: #60a5fa">Block</span> | <span style="color: #fbbf24">Whiff</span></p>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Ground Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">963</span>   <span class="slash">|   </span><span style="color: #60a5fa;">277</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1358</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Jab 1: <span class="attack-breakdown-container"><span style="color: #68d391;">703</span>   <span class="slash">|   </span><span style="color: #60a5fa;">211</span>   <span class="slash">|   </span><span style="color: #fbbf24;">967</span></span></div>
+                                    <div class="technique-item">Jab 2: <span class="attack-breakdown-container"><span style="color: #68d391;">69</span>   <span class="slash">|   </span><span style="color: #60a5fa;">24</span>   <span class="slash">|   </span><span style="color: #fbbf24;">186</span></span></div>
+                                    <div class="technique-item zero-value">Jab 3: <span class="attack-breakdown-container"><span style="color: #68d391;">0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0</span></span></div>
+                                    <div class="technique-item">Rapid Jab: <span class="attack-breakdown-container"><span style="color: #68d391;">0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2</span></span></div>
+                                    <div class="technique-item">Dash Attack: <span class="attack-breakdown-container"><span style="color: #68d391;">191</span>   <span class="slash">|   </span><span style="color: #60a5fa;">42</span>   <span class="slash">|   </span><span style="color: #fbbf24;">203</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Tilts<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">765</span>   <span class="slash">|   </span><span style="color: #60a5fa;">196</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2277</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">176</span>   <span class="slash">|   </span><span style="color: #60a5fa;">78</span>   <span class="slash">|   </span><span style="color: #fbbf24;">556</span></span></div>
+                                    <div class="technique-item">U-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">406</span>   <span class="slash">|   </span><span style="color: #60a5fa;">52</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1201</span></span></div>
+                                    <div class="technique-item">D-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">183</span>   <span class="slash">|   </span><span style="color: #60a5fa;">66</span>   <span class="slash">|   </span><span style="color: #fbbf24;">520</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Smash Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">460</span>   <span class="slash">|   </span><span style="color: #60a5fa;">136</span>   <span class="slash">|   </span><span style="color: #fbbf24;">898</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">319</span>   <span class="slash">|   </span><span style="color: #60a5fa;">101</span>   <span class="slash">|   </span><span style="color: #fbbf24;">604</span></span></div>
+                                    <div class="technique-item">U-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">93</span>   <span class="slash">|   </span><span style="color: #60a5fa;">28</span>   <span class="slash">|   </span><span style="color: #fbbf24;">152</span></span></div>
+                                    <div class="technique-item">D-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">48</span>   <span class="slash">|   </span><span style="color: #60a5fa;">7</span>   <span class="slash">|   </span><span style="color: #fbbf24;">142</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Aerial Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">6654</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1966</span>   <span class="slash">|   </span><span style="color: #fbbf24;">14630</span></span></h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="aerial-tab uair" data-aerial="uair">Up Air <span class="attack-breakdown-container"><span style="color: #68d391;">167</span>   <span class="slash">|   </span><span style="color: #60a5fa;">52</span>   <span class="slash">|   </span><span style="color: #fbbf24;">743</span></span></div>
+                                    <div></div>
+                                    <div class="aerial-tab bair" data-aerial="bair">Back Air <span class="attack-breakdown-container"><span style="color: #68d391;">2337</span>   <span class="slash">|   </span><span style="color: #60a5fa;">647</span>   <span class="slash">|   </span><span style="color: #fbbf24;">4504</span></span></div>
+                                    <div class="aerial-tab nair active" data-aerial="nair">Neutral Air <span class="attack-breakdown-container"><span style="color: #68d391;">1643</span>   <span class="slash">|   </span><span style="color: #60a5fa;">667</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3141</span></span></div>
+                                    <div class="aerial-tab fair" data-aerial="fair">Forward Air <span class="attack-breakdown-container"><span style="color: #68d391;">79</span>   <span class="slash">|   </span><span style="color: #60a5fa;">13</span>   <span class="slash">|   </span><span style="color: #fbbf24;">349</span></span></div>
+                                    <div></div>
+                                    <div class="aerial-tab dair" data-aerial="dair">Down Air <span class="attack-breakdown-container"><span style="color: #68d391;">2428</span>   <span class="slash">|   </span><span style="color: #60a5fa;">587</span>   <span class="slash">|   </span><span style="color: #fbbf24;">5893</span></span></div>
+                                    <div></div>
+                                </div>
+                                
+                                <!-- Aerial Resolution Details -->
+                                <div class="aerial-details">
+                                    
+            <div class="aerial-panel active" data-aerial="nair" >
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('nair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('nair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="4766" data-percentage="87.4%">4766</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="4329" data-percentage="79.4%">4329</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="284" data-percentage="5.2%">284</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="33" data-percentage="0.6%">33</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="116" data-percentage="2.1%">116</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="685" data-percentage="12.6%">685</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="58" data-percentage="1.1%">58</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="622" data-percentage="11.4%">622</span></div>
+                                <div class="technique-item">Death: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="fair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('fair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('fair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="367" data-percentage="83.2%">367</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="297" data-percentage="67.3%">297</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="43" data-percentage="9.8%">43</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.2%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="12" data-percentage="2.7%">12</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="14" data-percentage="3.2%">14</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="74" data-percentage="16.8%">74</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="11" data-percentage="2.5%">11</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="12.5%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="7" data-percentage="1.6%">7</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.2%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="bair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('bair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('bair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="6122" data-percentage="81.8%">6122</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="2472" data-percentage="33.0%">2472</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="453" data-percentage="6.0%">453</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="11" data-percentage="0.1%">11</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="3162" data-percentage="42.2%">3162</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1366" data-percentage="18.2%">1366</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="523" data-percentage="7.0%">523</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="829" data-percentage="11.1%">829</span></div>
+                                <div class="technique-item">Death: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Other: <span data-total="8" data-percentage="0.1%">8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="uair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('uair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('uair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="858" data-percentage="89.2%">858</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="707" data-percentage="73.5%">707</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="61" data-percentage="6.3%">61</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="6" data-percentage="0.6%">6</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="83" data-percentage="8.6%">83</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="104" data-percentage="10.8%">104</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="47" data-percentage="4.9%">47</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="5.7%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="2" data-percentage="0.2%">2</span></div>
+                                <div class="technique-item zero-value">Other: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="dair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('dair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('dair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="7712" data-percentage="86.6%">7712</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="6338" data-percentage="71.1%">6338</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="703" data-percentage="7.9%">703</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="63" data-percentage="0.7%">63</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="584" data-percentage="6.6%">584</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1196" data-percentage="13.4%">1196</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="287" data-percentage="3.2%">287</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="23" data-percentage="0.3%">23</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="776" data-percentage="8.7%">776</span></div>
+                                <div class="technique-item">Death: <span data-total="109" data-percentage="1.2%">109</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Per Game Breakdown View -->
+                        <div id="attack-per-game-breakdown" style="display: none;">
+                            <div class="attack-section">
+                                <p class=view-description><span style="color: #68d391">Hit</span> | <span style="color: #60a5fa">Block</span> | <span style="color: #fbbf24">Whiff</span></p>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Ground Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">1.4</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.4</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1.9</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Jab 1: <span class="attack-breakdown-container"><span style="color: #68d391;">1.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.3</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1.3</span></span></div>
+                                    <div class="technique-item">Jab 2: <span class="attack-breakdown-container"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.3</span></span></div>
+                                    <div class="technique-item zero-value">Jab 3: <span class="attack-breakdown-container"><span style="color: #68d391;">0.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.0</span></span></div>
+                                    <div class="technique-item zero-value">Rapid Jab: <span class="attack-breakdown-container"><span style="color: #68d391;">0.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.0</span></span></div>
+                                    <div class="technique-item">Dash Attack: <span class="attack-breakdown-container"><span style="color: #68d391;">0.3</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.3</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Tilts<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">1.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.3</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3.1</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">0.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.8</span></span></div>
+                                    <div class="technique-item">U-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">0.6</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1.6</span></span></div>
+                                    <div class="technique-item">D-Tilt: <span class="attack-breakdown-container"><span style="color: #68d391;">0.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.7</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Smash Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">0.6</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1.2</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">0.4</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.8</span></span></div>
+                                    <div class="technique-item">U-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.2</span></span></div>
+                                    <div class="technique-item">D-Smash: <span class="attack-breakdown-container"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.2</span></span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Aerial Attacks<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">9.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">2.7</span>   <span class="slash">|   </span><span style="color: #fbbf24;">19.9</span></span></h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="aerial-tab uair" data-aerial="uair">Up Air <span class="attack-breakdown-container"><span style="color: #68d391;">0.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">1.0</span></span></div>
+                                    <div></div>
+                                    <div class="aerial-tab bair" data-aerial="bair">Back Air <span class="attack-breakdown-container"><span style="color: #68d391;">3.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.9</span>   <span class="slash">|   </span><span style="color: #fbbf24;">6.1</span></span></div>
+                                    <div class="aerial-tab nair active" data-aerial="nair">Neutral Air <span class="attack-breakdown-container"><span style="color: #68d391;">2.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.9</span>   <span class="slash">|   </span><span style="color: #fbbf24;">4.3</span></span></div>
+                                    <div class="aerial-tab fair" data-aerial="fair">Forward Air <span class="attack-breakdown-container"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.5</span></span></div>
+                                    <div></div>
+                                    <div class="aerial-tab dair" data-aerial="dair">Down Air <span class="attack-breakdown-container"><span style="color: #68d391;">3.3</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.8</span>   <span class="slash">|   </span><span style="color: #fbbf24;">8.0</span></span></div>
+                                    <div></div>
+                                </div>
+                                
+                                <!-- Aerial Resolution Details -->
+                                <div class="aerial-details">
+                                    
+            <div class="aerial-panel active" data-aerial="nair" >
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('nair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('nair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="4766" data-percentage="87.4%">4766</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="4329" data-percentage="79.4%">4329</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="284" data-percentage="5.2%">284</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="33" data-percentage="0.6%">33</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="116" data-percentage="2.1%">116</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="685" data-percentage="12.6%">685</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="58" data-percentage="1.1%">58</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="622" data-percentage="11.4%">622</span></div>
+                                <div class="technique-item">Death: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="fair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('fair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('fair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="367" data-percentage="83.2%">367</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="297" data-percentage="67.3%">297</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="43" data-percentage="9.8%">43</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.2%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="12" data-percentage="2.7%">12</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="14" data-percentage="3.2%">14</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="74" data-percentage="16.8%">74</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="11" data-percentage="2.5%">11</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="12.5%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="7" data-percentage="1.6%">7</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.2%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="bair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('bair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('bair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="6122" data-percentage="81.8%">6122</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="2472" data-percentage="33.0%">2472</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="453" data-percentage="6.0%">453</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="11" data-percentage="0.1%">11</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="3162" data-percentage="42.2%">3162</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1366" data-percentage="18.2%">1366</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="523" data-percentage="7.0%">523</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="829" data-percentage="11.1%">829</span></div>
+                                <div class="technique-item">Death: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Other: <span data-total="8" data-percentage="0.1%">8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="uair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('uair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('uair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="858" data-percentage="89.2%">858</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="707" data-percentage="73.5%">707</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="61" data-percentage="6.3%">61</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="6" data-percentage="0.6%">6</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="83" data-percentage="8.6%">83</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="104" data-percentage="10.8%">104</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="47" data-percentage="4.9%">47</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="5.7%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="2" data-percentage="0.2%">2</span></div>
+                                <div class="technique-item zero-value">Other: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="dair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('dair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('dair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="7712" data-percentage="86.6%">7712</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="6338" data-percentage="71.1%">6338</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="703" data-percentage="7.9%">703</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="63" data-percentage="0.7%">63</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="584" data-percentage="6.6%">584</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1196" data-percentage="13.4%">1196</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="287" data-percentage="3.2%">287</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="23" data-percentage="0.3%">23</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="776" data-percentage="8.7%">776</span></div>
+                                <div class="technique-item">Death: <span data-total="109" data-percentage="1.2%">109</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Per Game Total View -->
+                        <div id="attack-per-game-total" style="display: none;">
+                            <div class="attack-section">
+                                <h4>Ground Attacks - 3.5</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Jab 1: <span>2.6</span></div>
+                                    <div class="technique-item">Jab 2: <span>0.4</span></div>
+                                    <div class="technique-item zero-value">Jab 3: <span>0.0</span></div>
+                                    <div class="technique-item zero-value">Rapid Jab: <span>0.0</span></div>
+                                    <div class="technique-item">Dash Attack: <span>0.6</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Tilts - 4.4</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Tilt: <span>1.1</span></div>
+                                    <div class="technique-item">U-Tilt: <span>2.3</span></div>
+                                    <div class="technique-item">D-Tilt: <span>1.0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Smash Attacks - 2.0</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Smash: <span>1.4</span></div>
+                                    <div class="technique-item">U-Smash: <span>0.4</span></div>
+                                    <div class="technique-item">D-Smash: <span>0.3</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Aerial Attacks - 31.7</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="aerial-tab uair" data-aerial="uair">Up Air <span>1.3</span></div>
+                                    <div></div>
+                                    <div class="aerial-tab bair" data-aerial="bair">Back Air <span>10.2</span></div>
+                                    <div class="aerial-tab nair active" data-aerial="nair">Neutral Air <span>7.4</span></div>
+                                    <div class="aerial-tab fair" data-aerial="fair">Forward Air <span>0.6</span></div>
+                                    <div></div>
+                                    <div class="aerial-tab dair" data-aerial="dair">Down Air <span>12.2</span></div>
+                                    <div></div>
+                                </div>
+                                
+                                <!-- Aerial Resolution Details -->
+                                <div class="aerial-details">
+                                    
+            <div class="aerial-panel active" data-aerial="nair" >
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('nair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('nair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="4766" data-percentage="87.4%">4766</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="4329" data-percentage="79.4%">4329</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="284" data-percentage="5.2%">284</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="33" data-percentage="0.6%">33</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="116" data-percentage="2.1%">116</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="685" data-percentage="12.6%">685</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="58" data-percentage="1.1%">58</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="622" data-percentage="11.4%">622</span></div>
+                                <div class="technique-item">Death: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="fair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('fair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('fair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="367" data-percentage="83.2%">367</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="297" data-percentage="67.3%">297</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="43" data-percentage="9.8%">43</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.2%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="12" data-percentage="2.7%">12</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="14" data-percentage="3.2%">14</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="74" data-percentage="16.8%">74</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="11" data-percentage="2.5%">11</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="12.5%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="7" data-percentage="1.6%">7</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.2%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="bair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('bair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('bair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="6122" data-percentage="81.8%">6122</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="2472" data-percentage="33.0%">2472</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="453" data-percentage="6.0%">453</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="11" data-percentage="0.1%">11</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="3162" data-percentage="42.2%">3162</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1366" data-percentage="18.2%">1366</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="523" data-percentage="7.0%">523</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="829" data-percentage="11.1%">829</span></div>
+                                <div class="technique-item">Death: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Other: <span data-total="8" data-percentage="0.1%">8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="uair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('uair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('uair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="858" data-percentage="89.2%">858</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="707" data-percentage="73.5%">707</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="61" data-percentage="6.3%">61</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="6" data-percentage="0.6%">6</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="83" data-percentage="8.6%">83</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="104" data-percentage="10.8%">104</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="47" data-percentage="4.9%">47</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="5.7%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="2" data-percentage="0.2%">2</span></div>
+                                <div class="technique-item zero-value">Other: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                    
+            <div class="aerial-panel " data-aerial="dair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('dair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('dair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="7712" data-percentage="86.6%">7712</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="6338" data-percentage="71.1%">6338</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="703" data-percentage="7.9%">703</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="63" data-percentage="0.7%">63</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="584" data-percentage="6.6%">584</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1196" data-percentage="13.4%">1196</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="287" data-percentage="3.2%">287</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="23" data-percentage="0.3%">23</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="776" data-percentage="8.7%">776</span></div>
+                                <div class="technique-item">Death: <span data-total="109" data-percentage="1.2%">109</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Total View -->
+                        <div id="attack-total" style="display: none;">
+                            <div class="attack-section">
+                                <h4>Ground Attacks - 2598</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Jab 1: <span>1881</span></div>
+                                    <div class="technique-item">Jab 2: <span>279</span></div>
+                                    <div class="technique-item zero-value">Jab 3: <span>0</span></div>
+                                    <div class="technique-item">Rapid Jab: <span>2</span></div>
+                                    <div class="technique-item">Dash Attack: <span>436</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Tilts - 3238</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Tilt: <span>810</span></div>
+                                    <div class="technique-item">U-Tilt: <span>1659</span></div>
+                                    <div class="technique-item">D-Tilt: <span>769</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Smash Attacks - 1494</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">F-Smash: <span>1024</span></div>
+                                    <div class="technique-item">U-Smash: <span>273</span></div>
+                                    <div class="technique-item">D-Smash: <span>197</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="attack-section">
+                                <h4>Aerial Attacks - 23250</h4>
+                                <div class="aerial-grid">
+                                    <div></div>
+                                    <div class="aerial-tab uair" data-aerial="uair">Up Air <span>962</span></div>
+                                    <div></div>
+                                    <div class="aerial-tab bair" data-aerial="bair">Back Air <span>7488</span></div>
+                                    <div class="aerial-tab nair active" data-aerial="nair">Neutral Air <span>5451</span></div>
+                                    <div class="aerial-tab fair" data-aerial="fair">Forward Air <span>441</span></div>
+                                    <div></div>
+                                    <div class="aerial-tab dair" data-aerial="dair">Down Air <span>8908</span></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Aerial Resolution Details -->
+                            <div class="aerial-details">
+                                
+            <div class="aerial-panel active" data-aerial="nair" >
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('nair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('nair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="4766" data-percentage="87.4%">4766</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="4329" data-percentage="79.4%">4329</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="284" data-percentage="5.2%">284</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="33" data-percentage="0.6%">33</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="116" data-percentage="2.1%">116</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="685" data-percentage="12.6%">685</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="58" data-percentage="1.1%">58</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="622" data-percentage="11.4%">622</span></div>
+                                <div class="technique-item">Death: <span data-total="4" data-percentage="0.1%">4</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                
+            <div class="aerial-panel " data-aerial="fair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('fair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('fair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="367" data-percentage="83.2%">367</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="297" data-percentage="67.3%">297</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="43" data-percentage="9.8%">43</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.2%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="12" data-percentage="2.7%">12</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="14" data-percentage="3.2%">14</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="74" data-percentage="16.8%">74</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="11" data-percentage="2.5%">11</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="12.5%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="7" data-percentage="1.6%">7</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.2%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                
+            <div class="aerial-panel " data-aerial="bair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('bair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('bair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="6122" data-percentage="81.8%">6122</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="2472" data-percentage="33.0%">2472</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="453" data-percentage="6.0%">453</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="11" data-percentage="0.1%">11</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="3162" data-percentage="42.2%">3162</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1366" data-percentage="18.2%">1366</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="523" data-percentage="7.0%">523</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="829" data-percentage="11.1%">829</span></div>
+                                <div class="technique-item">Death: <span data-total="3" data-percentage="0.0%">3</span></div>
+                                <div class="technique-item">Other: <span data-total="8" data-percentage="0.1%">8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                
+            <div class="aerial-panel " data-aerial="uair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('uair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('uair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="858" data-percentage="89.2%">858</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="707" data-percentage="73.5%">707</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="61" data-percentage="6.3%">61</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="1" data-percentage="0.1%">1</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="6" data-percentage="0.6%">6</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="83" data-percentage="8.6%">83</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="104" data-percentage="10.8%">104</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="47" data-percentage="4.9%">47</span></div>
+                                <div class="technique-item zero-value">Recovery Transition: <span data-total="0" data-percentage="0.0%">0</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="55" data-percentage="5.7%">55</span></div>
+                                <div class="technique-item">Death: <span data-total="2" data-percentage="0.2%">2</span></div>
+                                <div class="technique-item zero-value">Other: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                                
+            <div class="aerial-panel " data-aerial="dair" style="display: none;">
+                <div class="platform-sequence-header">
+                    <div class="platform-sequence-spacer"></div>
+                    <div class="display-toggles platform-sequence-toggles">
+                        <div class="toggle-button active" onclick="switchAerialResolutionMode('dair', 'total')">Total</div>
+                        <div class="toggle-button" onclick="switchAerialResolutionMode('dair', 'percentage')">%</div>
+                    </div>
+                </div>
+                <div class="sequence-breakdown">
+                    <div class="sequence-row">
+                        <div class="sequence-category">
+                            <h5>Ground Resolutions - <span class="section-total" data-total="7712" data-percentage="86.6%">7712</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">L-Cancel Success: <span data-total="6338" data-percentage="71.1%">6338</span></div>
+                                <div class="technique-item">L-Cancel Fail: <span data-total="703" data-percentage="7.9%">703</span></div>
+                                <div class="technique-item">Edge Cancel: <span data-total="63" data-percentage="0.7%">63</span></div>
+                                <div class="technique-item">Teeter Cancel: <span data-total="24" data-percentage="0.3%">24</span></div>
+                                <div class="technique-item">Auto Cancel: <span data-total="584" data-percentage="6.6%">584</span></div>
+                                <div class="technique-item zero-value">Platform Cancel: <span data-total="0" data-percentage="0.0%">0</span></div>
+                            </div>
+                        </div>
+                        <div class="sequence-category">
+                            <h5>Other Resolutions - <span class="section-total" data-total="1196" data-percentage="13.4%">1196</span></h5>
+                            <div class="technique-grid">
+                                <div class="technique-item">Aerial Transition: <span data-total="287" data-percentage="3.2%">287</span></div>
+                                <div class="technique-item">Recovery Transition: <span data-total="23" data-percentage="0.3%">23</span></div>
+                                <div class="technique-item">Hit Out: <span data-total="776" data-percentage="8.7%">776</span></div>
+                                <div class="technique-item">Death: <span data-total="109" data-percentage="1.2%">109</span></div>
+                                <div class="technique-item">Other: <span data-total="1" data-percentage="0.0%">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category collapsible">
+                    <div class="category-header">
+                        <div class="category-header-text">
+                            <h3>Special Attacks</h3>
+                        </div>
+                        <div class="display-toggles">
+                            <div class="toggle-button active" onclick="switchSpecialMode('breakdown')">Breakdown</div>
+                            <div class="toggle-button" onclick="switchSpecialMode('per-game')">Per Game Breakdown</div>
+                            <div class="toggle-button" onclick="switchSpecialMode('per-game-total')">Per Game Total</div>
+                            <div class="toggle-button" onclick="switchSpecialMode('total')">Total</div>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <!-- Breakdown View (Default) -->
+                        <div id="special-breakdown" style="display: block;">
+                            <div class="attack-section">
+                                <p class=view-description><span style="color: #68d391">Hit</span> | <span style="color: #60a5fa">Block</span> | <span style="color: #fbbf24">Whiff</span></p>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Lasers<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">8695</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1978</span>   <span class="slash">|   </span><span style="color: #fbbf24;">20268</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Laser: <span class="attack-breakdown-container"><span style="color: #68d391;">8682</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1975</span>   <span class="slash">|   </span><span style="color: #fbbf24;">20190</span></span></div>
+                                    <div class="technique-item">Grounded Laser: <span class="attack-breakdown-container"><span style="color: #68d391;">13</span>   <span class="slash">|   </span><span style="color: #60a5fa;">3</span>   <span class="slash">|   </span><span style="color: #fbbf24;">78</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Shines<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">6820</span>   <span class="slash">|   </span><span style="color: #60a5fa;">2237</span>   <span class="slash">|   </span><span style="color: #fbbf24;">10030</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Shine: <span class="attack-breakdown-container"><span style="color: #68d391;">2937</span>   <span class="slash">|   </span><span style="color: #60a5fa;">957</span>   <span class="slash">|   </span><span style="color: #fbbf24;">6525</span></span></div>
+                                    <div class="technique-item">Grounded Shine: <span class="attack-breakdown-container"><span style="color: #68d391;">3883</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1280</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3505</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Phantasms<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">134</span>   <span class="slash">|   </span><span style="color: #60a5fa;">32</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2870</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Phantasm: <span class="attack-breakdown-container"><span style="color: #68d391;">133</span>   <span class="slash">|   </span><span style="color: #60a5fa;">30</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2849</span></span></div>
+                                    <div class="technique-item">Grounded Phantasm: <span class="attack-breakdown-container"><span style="color: #68d391;">1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">2</span>   <span class="slash">|   </span><span style="color: #fbbf24;">21</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Firefox<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">37</span>   <span class="slash">|   </span><span style="color: #60a5fa;">9</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2758</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Firefox: <span class="attack-breakdown-container"><span style="color: #68d391;">37</span>   <span class="slash">|   </span><span style="color: #60a5fa;">9</span>   <span class="slash">|   </span><span style="color: #fbbf24;">2749</span></span></div>
+                                    <div class="technique-item">Grounded Firefox: <span class="attack-breakdown-container"><span style="color: #68d391;">0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">9</span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Per Game Breakdown View -->
+                        <div id="special-per-game" style="display: none;">
+                            <div class="attack-section">
+                                <p class=view-description><span style="color: #68d391">Hit</span> | <span style="color: #60a5fa">Block</span> | <span style="color: #fbbf24">Whiff</span></p>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Lasers<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">11.9</span>   <span class="slash">|   </span><span style="color: #60a5fa;">2.7</span>   <span class="slash">|   </span><span style="color: #fbbf24;">27.7</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Laser: <span class="attack-breakdown-container"><span style="color: #68d391;">11.8</span>   <span class="slash">|   </span><span style="color: #60a5fa;">2.7</span>   <span class="slash">|   </span><span style="color: #fbbf24;">27.5</span></span></div>
+                                    <div class="technique-item">Grounded Laser: <span class="attack-breakdown-container"><span style="color: #68d391;">0.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.1</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Shines<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">9.3</span>   <span class="slash">|   </span><span style="color: #60a5fa;">3.1</span>   <span class="slash">|   </span><span style="color: #fbbf24;">13.7</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Shine: <span class="attack-breakdown-container"><span style="color: #68d391;">4.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1.3</span>   <span class="slash">|   </span><span style="color: #fbbf24;">8.9</span></span></div>
+                                    <div class="technique-item">Grounded Shine: <span class="attack-breakdown-container"><span style="color: #68d391;">5.3</span>   <span class="slash">|   </span><span style="color: #60a5fa;">1.7</span>   <span class="slash">|   </span><span style="color: #fbbf24;">4.8</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Phantasms<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">0.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3.9</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Phantasm: <span class="attack-breakdown-container"><span style="color: #68d391;">0.2</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3.9</span></span></div>
+                                    <div class="technique-item">Grounded Phantasm: <span class="attack-breakdown-container"><span style="color: #68d391;">0.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.0</span></span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Firefox<span class="attack-breakdown-container" style="margin-left: 10px;"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3.8</span></span></h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Firefox: <span class="attack-breakdown-container"><span style="color: #68d391;">0.1</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">3.8</span></span></div>
+                                    <div class="technique-item">Grounded Firefox: <span class="attack-breakdown-container"><span style="color: #68d391;">0.0</span>   <span class="slash">|   </span><span style="color: #60a5fa;">0.0</span>   <span class="slash">|   </span><span style="color: #fbbf24;">0.0</span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Per Game Total View -->
+                        <div id="special-per-game-total" style="display: none;">
+                            <div class="attack-section">
+                                <h4>Lasers - 42.2</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Laser: <span>42.1</span></div>
+                                    <div class="technique-item">Grounded Laser: <span>0.1</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Shines - 26.0</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Shine: <span>14.2</span></div>
+                                    <div class="technique-item">Grounded Shine: <span>11.8</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Phantasms - 4.1</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Phantasm: <span>4.1</span></div>
+                                    <div class="technique-item">Grounded Phantasm: <span>0.0</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Firefox - 3.8</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Firefox: <span>3.8</span></div>
+                                    <div class="technique-item">Grounded Firefox: <span>0.0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Total View -->
+                        <div id="special-total" style="display: none;">
+                            <div class="attack-section">
+                                <h4>Lasers - 30941</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Laser: <span>30847</span></div>
+                                    <div class="technique-item">Grounded Laser: <span>94</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Shines - 19087</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Shine: <span>10419</span></div>
+                                    <div class="technique-item">Grounded Shine: <span>8668</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Phantasms - 3036</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Phantasm: <span>3012</span></div>
+                                    <div class="technique-item">Grounded Phantasm: <span>24</span></div>
+                                </div>
+                            </div>
+                            <div class="attack-section">
+                                <h4>Firefox - 2804</h4>
+                                <div class="technique-grid">
+                                    <div class="technique-item">Aerial Firefox: <span>2795</span></div>
+                                    <div class="technique-item">Grounded Firefox: <span>9</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        </main>
+
+    </div>
+
+    <script>
+function switchView(v){const m=document.getElementById('movement-view-btn'),a=document.getElementById('attacks-view-btn'),mc=document.getElementById('movement-container'),ac=document.getElementById('attacks-container');m.classList.toggle('active',v==='movement');a.classList.toggle('active',v==='attacks');mc.style.display=v==='movement'?'block':'none';ac.style.display=v==='attacks'?'block':'none';}
+function switchBasicMode(m){const t=m==='total';document.getElementById('basic-total').style.display=t?'grid':'none';document.getElementById('basic-per-game').style.display=t?'none':'grid';document.querySelector('.category:has(#basic-total) .toggle-button:first-child').classList.toggle('active',t);document.querySelector('.category:has(#basic-total) .toggle-button:last-child').classList.toggle('active',!t);}
+function switchPlatformMode(m){const t=m==='total';document.getElementById('platform-total').style.display=t?'grid':'none';document.getElementById('platform-per-game').style.display=t?'none':'grid';document.getElementById('no-impact-total').style.display=t?'flex':'none';document.getElementById('no-impact-per-game').style.display=t?'none':'flex';document.querySelector('.category:has(#platform-total) .toggle-button:first-child').classList.toggle('active',t);document.querySelector('.category:has(#platform-total) .toggle-button:last-child').classList.toggle('active',!t);}
+function switchShineMode(m){const isTotal=m==='total',isPerGame=m==='per-game',isPercentage=m==='percentage';document.getElementById('shine-total').style.display=isTotal?'block':'none';document.getElementById('shine-per-game').style.display=isPerGame?'block':'none';document.getElementById('shine-percentage').style.display=isPercentage?'block':'none';const buttons=document.querySelectorAll('.category:has(#shine-total) .toggle-button');buttons.forEach(b=>b.classList.remove('active'));if(isTotal)buttons[0].classList.add('active');else if(isPerGame)buttons[1].classList.add('active');else if(isPercentage)buttons[2].classList.add('active');}
+function switchCancelMode(m){const isTotal=m==='total',isPerGame=m==='per-game',isPercentage=m==='percentage';document.getElementById('cancel-total').style.display=isTotal?'block':'none';document.getElementById('cancel-per-game').style.display=isPerGame?'block':'none';document.getElementById('cancel-percentage').style.display=isPercentage?'block':'none';const buttons=document.querySelectorAll('.category:has(#cancel-total) .toggle-button');buttons.forEach(b=>b.classList.remove('active'));if(isTotal)buttons[0].classList.add('active');else if(isPerGame)buttons[1].classList.add('active');else if(isPercentage)buttons[2].classList.add('active');}
+function switchAttackMode(m){const isBreakdown=m==='breakdown',isPerGameBreakdown=m==='per-game-breakdown',isPerGameTotal=m==='per-game-total',isTotal=m==='total';document.getElementById('attack-breakdown').style.display=isBreakdown?'block':'none';document.getElementById('attack-per-game-breakdown').style.display=isPerGameBreakdown?'block':'none';document.getElementById('attack-per-game-total').style.display=isPerGameTotal?'block':'none';document.getElementById('attack-total').style.display=isTotal?'block':'none';const buttons=document.querySelectorAll('.category:has(.attack-section) .toggle-button');buttons.forEach(b=>b.classList.remove('active'));if(isBreakdown)buttons[0].classList.add('active');else if(isPerGameBreakdown)buttons[1].classList.add('active');else if(isPerGameTotal)buttons[2].classList.add('active');else if(isTotal)buttons[3].classList.add('active');setTimeout(()=>{const visibleView=document.querySelector('#attack-breakdown:not([style*="display: none"]), #attack-per-game-breakdown:not([style*="display: none"]), #attack-per-game-total:not([style*="display: none"]), #attack-total:not([style*="display: none"])')||document.querySelector('#attack-breakdown');const activeTab=visibleView.querySelector('.aerial-tab.active')||visibleView.querySelector('.aerial-tab[data-aerial="nair"]');if(activeTab){const aerialType=activeTab.dataset.aerial;const allTabs=visibleView.querySelectorAll('.aerial-tab');const allPanels=visibleView.querySelectorAll('.aerial-panel');allTabs.forEach(t=>t.classList.remove('active'));allPanels.forEach(p=>{p.classList.remove('active');p.style.display='none';});activeTab.classList.add('active');const panel=visibleView.querySelector(`.aerial-panel[data-aerial="${aerialType}"]`);if(panel){panel.classList.add('active');panel.style.display='block';}}},10);}
+function switchSpecialMode(m){const isBreakdown=m==='breakdown',isPerGame=m==='per-game',isPerGameTotal=m==='per-game-total',isTotal=m==='total';document.getElementById('special-breakdown').style.display=isBreakdown?'block':'none';document.getElementById('special-per-game').style.display=isPerGame?'block':'none';document.getElementById('special-per-game-total').style.display=isPerGameTotal?'block':'none';document.getElementById('special-total').style.display=isTotal?'block':'none';const buttons=document.querySelectorAll('.category:has(#special-breakdown) .toggle-button');buttons.forEach(b=>b.classList.remove('active'));if(isBreakdown)buttons[0].classList.add('active');else if(isPerGame)buttons[1].classList.add('active');else if(isPerGameTotal)buttons[2].classList.add('active');else if(isTotal)buttons[3].classList.add('active');}
+function switchPlatformResolutionMode(p,m){const panel=document.querySelector(`.platform-sequence-panel[data-platform="${p}"]`);if(!panel)return;panel.querySelectorAll('.platform-sequence-toggles .toggle-button').forEach(b=>b.classList.toggle('active',(m==='total'&&b.textContent==='Total')||(m==='percentage'&&b.textContent==='%')));panel.querySelectorAll('[data-total][data-percentage]').forEach(s=>s.textContent=m==='total'?s.dataset.total:s.dataset.percentage);}
+function setupAerialTabs(){const aerialTabs=document.querySelectorAll('.aerial-tab');aerialTabs.forEach(tab=>{tab.addEventListener('click',e=>{const aerialType=tab.dataset.aerial;const playerSection=tab.closest('.player-section');if(!playerSection)return;const visibleAttackView=document.querySelector('#attack-breakdown:not([style*="display: none"]), #attack-per-game-breakdown:not([style*="display: none"]), #attack-per-game-total:not([style*="display: none"]), #attack-total:not([style*="display: none"])')||document.querySelector('#attack-breakdown');const allTabs=visibleAttackView.querySelectorAll('.aerial-tab');const allPanels=visibleAttackView.querySelectorAll('.aerial-panel');allTabs.forEach(t=>t.classList.remove('active'));allPanels.forEach(p=>{p.classList.remove('active');p.style.display='none';});tab.classList.add('active');const panel=visibleAttackView.querySelector(`.aerial-panel[data-aerial="${aerialType}"]`);if(panel){panel.classList.add('active');panel.style.display='block';}});});}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.platform-tab').forEach(t=>{t.addEventListener('click',function(){const p=this.dataset.platform,s=this.closest('.player-section');s.querySelectorAll('.platform-tab').forEach(x=>x.classList.remove('active'));s.querySelectorAll('.platform-sequence-panel').forEach(x=>{x.classList.remove('active');x.style.display='none';});this.classList.add('active');const panel=s.querySelector(`.platform-sequence-panel[data-platform="${p}"]`);if(panel){panel.classList.add('active');panel.style.display='block';}});});setupAerialTabs();});
+            function switchView(view) {
+                const movementBtn = document.getElementById('movement-view-btn');
+                const attacksBtn = document.getElementById('attacks-view-btn');
+                const movementContainer = document.getElementById('movement-container');
+                const attacksContainer = document.getElementById('attacks-container');
+                
+                if (view === 'movement') {
+                    movementBtn.classList.add('active');
+                    attacksBtn.classList.remove('active');
+                    movementContainer.style.display = 'block';
+                    attacksContainer.style.display = 'none';
+                } else if (view === 'attacks') {
+                    movementBtn.classList.remove('active');
+                    attacksBtn.classList.add('active');
+                    movementContainer.style.display = 'none';
+                    attacksContainer.style.display = 'block';
+                }
+            }
+            
+            // Functions to handle per-game/total toggles for Basic Techniques
+            function switchBasicMode(mode) {
+                const totalView = document.getElementById('basic-total');
+                const perGameView = document.getElementById('basic-per-game');
+                const totalBtn = document.querySelector('.category:has(#basic-total) .toggle-button:first-child');
+                const perGameBtn = document.querySelector('.category:has(#basic-total) .toggle-button:last-child');
+                
+                if (mode === 'total') {
+                    totalView.style.display = 'grid';
+                    perGameView.style.display = 'none';
+                    totalBtn.classList.add('active');
+                    perGameBtn.classList.remove('active');
+                } else if (mode === 'per-game') {
+                    totalView.style.display = 'none';
+                    perGameView.style.display = 'grid';
+                    totalBtn.classList.remove('active');
+                    perGameBtn.classList.add('active');
+                }
+            }
+            
+            // Functions to handle total/per-game/percentage toggles for Shine Movement
+            function switchShineMode(mode) {
+                const totalView = document.getElementById('shine-total');
+                const perGameView = document.getElementById('shine-per-game');
+                const percentageView = document.getElementById('shine-percentage');
+                const buttons = document.querySelectorAll('.category:has(#shine-total) .toggle-button');
+                
+                // Hide all views
+                totalView.style.display = 'none';
+                perGameView.style.display = 'none';
+                percentageView.style.display = 'none';
+                
+                // Remove active class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                
+                // Show selected view and activate corresponding button
+                if (mode === 'total') {
+                    totalView.style.display = 'block';
+                    buttons[0].classList.add('active');
+                } else if (mode === 'per-game') {
+                    perGameView.style.display = 'block';
+                    buttons[1].classList.add('active');
+                } else if (mode === 'percentage') {
+                    percentageView.style.display = 'block';
+                    buttons[2].classList.add('active');
+                }
+            }
+            
+            // Functions to handle per-game/total toggles for Platform Movement
+            function switchPlatformMode(mode) {
+                const totalView = document.getElementById('platform-total');
+                const perGameView = document.getElementById('platform-per-game');
+                const noImpactTotal = document.getElementById('no-impact-total');
+                const noImpactPerGame = document.getElementById('no-impact-per-game');
+                const totalBtn = document.querySelector('.category:has(#platform-total) .toggle-button:first-child');
+                const perGameBtn = document.querySelector('.category:has(#platform-total) .toggle-button:last-child');
+                
+                if (mode === 'total') {
+                    totalView.style.display = 'grid';
+                    perGameView.style.display = 'none';
+                    if (noImpactTotal) noImpactTotal.style.display = 'flex';
+                    if (noImpactPerGame) noImpactPerGame.style.display = 'none';
+                    totalBtn.classList.add('active');
+                    perGameBtn.classList.remove('active');
+                } else if (mode === 'per-game') {
+                    totalView.style.display = 'none';
+                    perGameView.style.display = 'grid';
+                    if (noImpactTotal) noImpactTotal.style.display = 'none';
+                    if (noImpactPerGame) noImpactPerGame.style.display = 'flex';
+                    totalBtn.classList.remove('active');
+                    perGameBtn.classList.add('active');
+                }
+            }
+            
+            // Handle platform tab switching
+            document.addEventListener('DOMContentLoaded', function() {
+                const platformTabs = document.querySelectorAll('.platform-tab');
+                
+                platformTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        const platformType = this.dataset.platform;
+                        const playerSection = this.closest('.player-section');
+                        
+                        // Remove active class from all tabs in this player section
+                        const allTabs = playerSection.querySelectorAll('.platform-tab');
+                        const allPanels = playerSection.querySelectorAll('.platform-sequence-panel');
+                        
+                        allTabs.forEach(t => t.classList.remove('active'));
+                        allPanels.forEach(p => {
+                            p.classList.remove('active');
+                            p.style.display = 'none';
+                        });
+                        
+                        // Add active class to clicked tab and corresponding panel
+                        this.classList.add('active');
+                        const panel = playerSection.querySelector(`.platform-sequence-panel[data-platform="${platformType}"]`);
+                        if (panel) {
+                            panel.classList.add('active');
+                            panel.style.display = 'block';
+                        }
+                    });
+                });
+            });
+            
+            // Handle aerial resolution mode switching (Total vs %) - uses pre-calculated values
+            function switchAerialResolutionMode(aerialType, mode) {
+                // Find the currently visible attack view
+                const visibleAttackView = document.querySelector('#attack-breakdown:not([style*="display: none"]), #attack-per-game-breakdown:not([style*="display: none"]), #attack-per-game-total:not([style*="display: none"]), #attack-total:not([style*="display: none"])') || document.querySelector('#attack-breakdown');
+                
+                const panel = visibleAttackView.querySelector(`.aerial-panel[data-aerial="${aerialType}"]`);
+                if (!panel) return;
+                
+                // Update toggle button states
+                const toggleButtons = panel.querySelectorAll('.platform-sequence-toggles .toggle-button');
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                
+                const activeButton = Array.from(toggleButtons).find(btn => 
+                    (mode === 'total' && btn.textContent === 'Total') || 
+                    (mode === 'percentage' && btn.textContent === '%')
+                );
+                if (activeButton) activeButton.classList.add('active');
+                
+                // Update all values using pre-calculated data attributes
+                const valueSpans = panel.querySelectorAll('[data-total][data-percentage]');
+                valueSpans.forEach(span => {
+                    if (mode === 'total') {
+                        span.textContent = span.dataset.total;
+                    } else if (mode === 'percentage') {
+                        span.textContent = span.dataset.percentage;
+                    }
+                });
+            }
+            function switchPlatformResolutionMode(platformType, mode) {
+                const panel = document.querySelector(`.platform-sequence-panel[data-platform="${platformType}"]`);
+                if (!panel) return;
+                
+                // Update toggle button states
+                const toggleButtons = panel.querySelectorAll('.platform-sequence-toggles .toggle-button');
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                
+                const activeButton = Array.from(toggleButtons).find(btn => 
+                    (mode === 'total' && btn.textContent === 'Total') || 
+                    (mode === 'percentage' && btn.textContent === '%')
+                );
+                if (activeButton) activeButton.classList.add('active');
+                
+                // Update all values using pre-calculated data attributes
+                const valueSpans = panel.querySelectorAll('[data-total][data-percentage]');
+                valueSpans.forEach(span => {
+                    if (mode === 'total') {
+                        span.textContent = span.dataset.total;
+                    } else if (mode === 'percentage') {
+                        span.textContent = span.dataset.percentage;
+                    }
+                });
+            }
+            
+        </script>
+</body>
+</html>

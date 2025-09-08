@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Vision - Player Index</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .player-index {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .player-list {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .player-card {
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            border: 1px solid #4a5568;
+        }
+        .player-card:hover {
+            background: linear-gradient(135deg, #2d3748 100%, #4a5568 0%);
+            transform: translateY(-2px);
+        }
+        .player-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .player-character {
+            color: #ffa500;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .player-description {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="player-index">
+            <div class="header">
+                <h1>Frame Vision - Batch Replay Analysis</h1>
+            </div>
+            
+            <div class="player-list">
+
+                <a href="MANG-0-FALCO-vs-FALCO.html" class="player-card">
+                    <div class="player-name">MANGO</div>
+                    <div class="player-character">FALCO vs FALCO</div>
+                    <div class="player-description">805 Matches // 435 - Magi // 193 - KJH // 177 - Bobby</div>
+                </a>
+
+                <a href="MANG-0-FALCO-vs-MARTH.html" class="player-card">
+                    <div class="player-name">MANGO</div>
+                    <div class="player-character">FALCO vs MARTH</div>
+                    <div class="player-description">132 Matches // 83 - Zain // 49 - Kodorin</div>
+                </a>
+
+                <a href="KJH-23-FALCO-vs-FALCO.html" class="player-card">
+                    <div class="player-name">KJH</div>
+                    <div class="player-character">FALCO vs FALCO</div>
+                    <div class="player-description">733 Matches // 374 - Sammi // 193 - Mango // 166 - Billy</div>
+                </a>
+                
+                <a href="MAGI-732-FALCO-vs-FALCO.html" class="player-card">
+                    <div class="player-name">MAGI</div>
+                    <div class="player-character">FALCO vs FALCO</div>
+                    <div class="player-description">519 Matches // 435 - Mango // 56 - Love // 28 - Salt</div>
+                </a>
+
+                <a href="BBB-960-FALCO-vs-FALCO.html" class="player-card">
+                    <div class="player-name">BBB</div>
+                    <div class="player-character">FALCO vs FALCO</div>
+                    <div class="player-description">177 Matches // 177 - Mango</div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
